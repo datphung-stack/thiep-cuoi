@@ -1,92 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lễ thành hôn của Hữu Tiến ❤️ Nhật Linh</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <section class="card hero">
-      <h1 class="title">Lễ thành hôn của Hữu Tiến ❤️ Nhật Linh</h1>
-      <p class="subtitle">Trân trọng kính mời Quý khách đến chung vui cùng chúng tôi</p>
+
+  <audio id="bg-audio" src="https://www.youtube.com/watch?v=F5iR0tG3PE0" autoplay loop></audio>
+
+  <main class="container">
+
+    <section class="intro">
+      <h1>Lễ thành hôn của</h1>
+      <h2>Hữu Tiến ❤️ Nhật Linh</h2>
     </section>
 
-    <section class="card">
-      <h2>Thông tin lễ cưới</h2>
-      <p><strong>Ngày tổ chức:</strong> Thứ Hai, 08 tháng 12 năm 2025 (Tức 19 tháng 10 năm Ất Tỵ)</p>
-      <p><strong>Giờ khai tiệc:</strong> 9:00 sáng</p>
-      <p><strong>Địa điểm:</strong> 41 LK2 Khu đô thị Núi Long, P. Hạc Thành, Thanh Hóa</p>
+    <section class="invite-text">
+      <p>Trân trọng kính mời quý khách đến chung vui cùng chúng tôi trong ngày trọng đại này.</p>
     </section>
 
-    <section class="card qrgift">
-      <h2>Mừng cưới đến Cô dâu & Chú rể</h2>
+    <section class="gift-section">
+      <h3>💌 Mừng cưới đến Cô dâu & Chú rể</h3>
       <div class="qr-pair">
-        <div class="qr-item">
-          <img src="qr-bride.png" alt="QR cô dâu" />
-          <p>Cô dâu Nhật Linh 💕</p>
+        <div class="qr-card">
+          <img src="qr-groom.png" alt="QR Chú rể Hữu Tiến">
+          <p><strong>Phùng Hữu Tiến</strong><br>STK: 5011819802<br>BIDV</p>
+          <button onclick="copyToClipboard('5011819802')">Sao chép STK</button>
         </div>
-        <div class="qr-item">
-          <img src="qr-groom.png" alt="QR chú rể" />
-          <p>Chú rể Hữu Tiến 💖</p>
+        <div class="qr-card">
+          <img src="qr-bride.png" alt="QR Cô dâu Nhật Linh">
+          <p><strong>Nguyễn Nhật Linh</strong><br>STK: 0368948495<br>Ngân hàng VietQR</p>
+          <button onclick="copyToClipboard('0368948495')">Sao chép STK</button>
         </div>
       </div>
     </section>
 
-    <section class="card">
-      <h2>Đường dẫn bản đồ</h2>
-      <img src="qr-map.png" alt="QR bản đồ đến nhà trai" class="qrmap">
-      <p class="center">📍 <a href="https://maps.google.com/?q=41+LK2+Khu+đô+thị+Núi+Long,+P.Hạc+Thành,+Thanh+Hóa" target="_blank">Xem bản đồ tại đây</a></p>
+    <section class="map-section">
+      <h3>Địa điểm tổ chức</h3>
+      <img src="8b490b21-0ff3-4737-aa73-9ee1d168e580.png" alt="QR Địa chỉ">
+      <p><a href="https://www.google.com/maps/search/?api=1&query=41+LK2+khu+đ%C3%B4+th%E1%BB%8B+N%C3%BAi+Long,+P.H%E1%BA%A1c+Th%C3%A0nh,+Thanh+H%C3%B3a" target="_blank">
+        Xem bản đồ: 41 LK2 khu đô thị Núi Long, P.Hạc Thành, Thanh Hóa</a></p>
     </section>
 
-    <section class="card module" id="module-wishes">
+    <section id="module-wishes">
       <h3>Gửi lời chúc tới Cô dâu & Chú rể</h3>
-      <form id="wish-form" class="wishes" onsubmit="return false;">
+      <form id="wish-form" onsubmit="return false;">
         <input type="text" id="wish-name" placeholder="Họ tên (không bắt buộc)" />
         <textarea id="wish-text" placeholder="Lời chúc..." required></textarea>
-        <div style="display:flex;gap:8px;align-items:center">
-          <button id="wish-send" class="btn">Gửi lời chúc</button>
-          <button id="wish-clear" class="btn alt" type="button">Xóa mẫu</button>
+        <div class="btn-group">
+          <button id="wish-send">Gửi lời chúc</button>
+          <button id="wish-clear" type="button">Xóa mẫu</button>
         </div>
       </form>
       <div id="wishes-list" class="wishes-list"></div>
-      <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
-        <button id="export-wishes" class="btn secondary">Xuất lời chúc (Excel)</button>
+      <div style="margin-top:12px;">
+        <button id="export-wishes">Xuất lời chúc (Excel)</button>
       </div>
     </section>
+
   </main>
-
-  <div id="toolbar" class="toolbar" style="display:none">
-    <button id="btn-add" class="btn">✚ Thêm mục</button>
-    <button id="btn-export" class="btn alt">⬇ Xuất HTML</button>
-    <button id="btn-clear" class="btn secondary">Xóa nội dung</button>
-  </div>
-
-  <div id="modal" class="modal" style="display:none">
-    <div class="panel">
-      <h3>Thêm mục mới</h3>
-      <div class="form-row">
-        <label>Loại mục</label>
-        <select id="module-type">
-          <option value="text">Đoạn văn</option>
-          <option value="image">Ảnh</option>
-          <option value="video">Video (YouTube link)</option>
-        </select>
-      </div>
-      <div id="module-fields"></div>
-      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
-        <button id="modal-add" class="btn">Thêm</button>
-        <button id="modal-cancel" class="btn secondary">Hủy</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="music-toggle" class="music-toggle">🎵 Âm nhạc</div>
-  <iframe id="ytplayer" type="text/html" width="0" height="0"
-    src="https://www.youtube.com/embed/F5iR0tG3PE0?autoplay=0&loop=1&playlist=F5iR0tG3PE0"
-    frameborder="0" allow="autoplay"></iframe>
 
   <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
   <script src="script.js"></script>

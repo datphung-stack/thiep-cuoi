@@ -1,83 +1,58 @@
 body {
-  font-family: 'Inter', sans-serif;
-  background: #fffaf9;
+  font-family: 'Dancing Script', cursive;
+  background-color: #fff9f9;
+  color: #333;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
-h1, h2, h3 {
-  font-family: 'Great Vibes', cursive;
-  text-align: center;
-  color: #b66;
-}
-.card {
-  background: #fff;
-  margin: 24px auto;
+.container {
+  max-width: 800px;
+  margin: auto;
   padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  width: min(90%, 600px);
-}
-.hero .title {
-  font-size: 2.4em;
-  margin-bottom: 10px;
-}
-.subtitle {
   text-align: center;
-  font-size: 1.1em;
-  color: #555;
+}
+h1, h2, h3 {
+  color: #d45a7b;
 }
 .qr-pair {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
-  text-align: center;
 }
-.qr-item img {
-  width: 150px;
-  border-radius: 12px;
+.qr-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 45%;
 }
-.qrmap {
-  width: 180px;
-  margin: 0 auto;
-  display: block;
-  border-radius: 16px;
+.qr-card img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 10px;
 }
-.center { text-align:center; }
-.btn {
-  background: #f6c8c8;
+.qr-card button {
+  background: #f9b3c6;
   border: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-}
-.btn:hover { background: #f8d8d8; }
-.btn.alt { background: #ddd; }
-.btn.secondary { background: #ccc; }
-.wishes-list { margin-top: 16px; }
-.wish-item {
-  background: #fff4f4;
+  border-radius: 6px;
+  padding: 8px 14px;
   margin-top: 8px;
-  padding: 8px;
-  border-radius: 8px;
-}
-.music-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #f6c8c8;
-  padding: 10px 16px;
-  border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-.petal {
-  position: fixed;
-  top: -10px;
-  background: radial-gradient(circle at 30% 30%, #ffc0cb, #ffb6c1);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 999;
+.qr-card button:hover {
+  background: #f48fa8;
+  color: #fff;
+}
+.wishes-list {
+  margin-top: 20px;
+  text-align: left;
+}
+.wish-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
