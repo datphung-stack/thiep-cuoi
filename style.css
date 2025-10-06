@@ -1,12 +1,14 @@
-/* style.css - pastel hoa lá, responsive */
-:root{--bg:#fffaf7;--accent:#b46c77;--muted:#6f6f6f;--card:#ffffff}
+/* style.css - pastel hoa lá */ 
+:root{
+  --bg:#fffaf7; --accent:#b46c77; --muted:#6f6f6f; --card:#ffffff;
+}
 *{box-sizing:border-box}
 body{margin:0;font-family:Inter, 'Segoe UI', Roboto, Arial, sans-serif;background:var(--bg);color:#333;overflow-x:hidden}
-.hero{min-height:70vh;display:flex;align-items:center;justify-content:center;flex-direction:column;background:linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1529634895659-3f24c2e3f3c9?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;padding:48px 20px;text-align:center;position:relative}
-.hero h1{font-size:2.4rem;color:var(--accent);margin:0}
-.hero h2{font-size:1.1rem;color:var(--muted);margin-top:6px}
+.hero{min-height:60vh;display:flex;align-items:center;justify-content:center;flex-direction:column;background:linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1529634895659-3f24c2e3f3c9?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;padding:48px 20px;text-align:center;position:relative}
+.hero-title{font-family:'Great Vibes', cursive;font-size:2.6rem;color:var(--accent);margin:0}
+.hero-sub{font-size:1rem;color:var(--muted);margin:8px 0}
 .divider{width:80px;height:4px;background:rgba(180,108,119,0.9);margin:18px auto;border-radius:3px}
-.container{max-width:900px;margin:-60px auto 60px;padding:0 16px}
+.container{max-width:900px;margin:-40px auto 60px;padding:0 16px}
 .card{background:var(--card);border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.08);padding:22px;margin-bottom:22px}
 .card h3{color:var(--accent);margin-top:0}
 .info p{margin:8px 0;color:var(--muted)}
@@ -23,10 +25,10 @@ body{margin:0;font-family:Inter, 'Segoe UI', Roboto, Arial, sans-serif;backgroun
 input[type=text], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
 textarea{min-height:100px}
 .small{font-size:0.9rem;color:var(--muted)}
-.petal{position:fixed;top:-20px;background:linear-gradient(180deg, rgba(255,203,213,0.95), rgba(255,182,193,0.85));width:10px;height:18px;border-radius:50%;opacity:0.9;z-index:0;pointer-events:none}
+.petal{position:fixed;top:-20px;background:linear-gradient(180deg, rgba(255,203,213,0.95), rgba(255,182,193,0.85));width:10px;height:18px;border-radius:50%;opacity:0.9;z-index:0;pointer-events:none;mix-blend-mode:screen}
 .wishes{display:flex;flex-direction:column;gap:10px}
 .wishes input, .wishes textarea{padding:10px;border-radius:8px;border:1px solid #eee}
 .wishes-list{margin-top:12px;display:flex;flex-direction:column;gap:10px}
 .wish-item{padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,248,248,0.95));box-shadow:0 4px 10px rgba(0,0,0,0.04)}
 .music-toggle{position:fixed;left:18px;bottom:18px;z-index:1200;padding:10px;border-radius:10px;border:none;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
-@media(max-width:600px){.hero{padding:48px 12px}.hero h1{font-size:1.8rem}.container{margin-top:-40px}}
+@media(max-width:600px){.hero{padding:48px 12px}.hero-title{font-size:1.8rem}.container{margin-top:-40px}}

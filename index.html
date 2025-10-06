@@ -1,65 +1,96 @@
 <!doctype html>
-</div>
-</section>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lễ thành hôn của Hữu Tiến ❤️ Nhật Linh</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Hidden YouTube iframe for autoplay after user interaction -->
+  <div id="yt-player" style="display:none"></div>
 
+  <!-- Music toggle (user clicks to allow autoplay) -->
+  <button id="music-toggle" class="music-toggle" aria-label="Bật/Tắt nhạc">Âm nhạc: Tắt</button>
 
-<!-- Wishes will be appended here at the end -->
-<section class="card module" id="module-wishes">
-<h3>Gửi lời chúc tới Cô dâu & Chú rể</h3>
-<form id="wish-form" class="wishes" onsubmit="return false;">
-<input type="text" id="wish-name" placeholder="Họ tên (không bắt buộc)" />
-<textarea id="wish-text" placeholder="Lời chúc..." required></textarea>
-<div style="display:flex;gap:8px;align-items:center">
-<button id="wish-send" class="btn">Gửi lời chúc</button>
-<button id="wish-clear" class="btn alt" type="button">Xóa mẫu</button>
-</div>
-</form>
+  <!-- Petals are appended by JS -->
 
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Lễ thành hôn của <span class="fancy">Hữu Tiến</span> ❤️ <span class="fancy">Nhật Linh</span></h1>
+      <h2 class="hero-sub">Trân trọng kính mời Quý khách đến chung vui cùng chúng tôi</h2>
+      <div class="divider"></div>
+      <p class="hero-date"><strong>Thứ Hai, 08/12/2025</strong> — 09:00</p>
+    </div>
+  </header>
 
-<div id="wishes-list" class="wishes-list"></div>
+  <main class="container">
+    <!-- Dynamic modules will render here -->
+    <div id="modules-area">
+      <!-- Preloaded info card (static) -->
+      <section class="card module" id="module-info">
+        <h3>Thông tin lễ cưới</h3>
+        <div class="info">
+          <p><strong>TẠI GIA ĐÌNH NHÀ TRAI</strong></p>
+          <p>41 LK2, Khu đô thị Núi Long,<br>Phường Hạc Thành, Thành phố Thanh Hóa</p>
+          <div class="qr"><p>Quét mã QR để xem bản đồ:</p><img src="qr-map.png" alt="QR Bản đồ"></div>
+        </div>
+      </section>
+    </div>
 
+    <!-- Wishes (fixed at the end) -->
+    <section class="card module" id="module-wishes">
+      <h3>Gửi lời chúc tới Cô dâu & Chú rể</h3>
+      <form id="wish-form" class="wishes" onsubmit="return false;">
+        <input type="text" id="wish-name" placeholder="Họ tên (không bắt buộc)" />
+        <textarea id="wish-text" placeholder="Lời chúc..." required></textarea>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button id="wish-send" class="btn">Gửi lời chúc</button>
+          <button id="wish-clear" class="btn alt" type="button">Xóa mẫu</button>
+        </div>
+      </form>
 
-<div style="margin-top:12px;display:flex;gap:8px;align-items:center">
-<button id="export-wishes" class="btn secondary">Xuất lời chúc (Excel)</button>
-</div>
-</section>
+      <div id="wishes-list" class="wishes-list"></div>
 
+      <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+        <button id="export-wishes" class="btn secondary">Xuất lời chúc (Excel)</button>
+      </div>
+    </section>
 
-</main>
+  </main>
 
+  <!-- Admin toolbar (hidden until admin login) -->
+  <div id="toolbar" class="toolbar" style="display:none">
+    <button id="btn-add" class="btn">✚ Thêm mục</button>
+    <button id="btn-export" class="btn alt">⬇ Xuất HTML</button>
+    <button id="btn-clear" class="btn secondary">Xóa nội dung</button>
+  </div>
 
-<!-- Admin toolbar (hidden until admin login) -->
-<div id="toolbar" class="toolbar" style="display:none">
-<button id="btn-add" class="btn">✚ Thêm mục</button>
-<button id="btn-export" class="btn alt">⬇ Xuất HTML</button>
-<button id="btn-clear" class="btn secondary">Xóa nội dung</button>
-</div>
+  <!-- Add Module Modal -->
+  <div id="modal" class="modal" style="display:none">
+    <div class="panel">
+      <h3>Thêm mục mới</h3>
+      <div class="form-row">
+        <label>Loại mục</label>
+        <select id="module-type">
+          <option value="text">Đoạn văn</option>
+          <option value="image">Ảnh</option>
+          <option value="video">Video (YouTube link)</option>
+        </select>
+      </div>
+      <div id="module-fields">
+        <!-- dynamic fields here -->
+      </div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+        <button id="modal-add" class="btn">Thêm</button>
+        <button id="modal-cancel" class="btn secondary">Hủy</button>
+      </div>
+    </div>
+  </div>
 
-
-<!-- Add Module Modal -->
-<div id="modal" class="modal" style="display:none">
-<div class="panel">
-<h3>Thêm mục mới</h3>
-<div class="form-row">
-<label>Loại mục</label>
-<select id="module-type">
-<option value="text">Đoạn văn</option>
-<option value="image">Ảnh</option>
-<option value="video">Video (YouTube link)</option>
-</select>
-</div>
-<div id="module-fields">
-<!-- dynamic fields here -->
-</div>
-<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
-<button id="modal-add" class="btn">Thêm</button>
-<button id="modal-cancel" class="btn secondary">Hủy</button>
-</div>
-</div>
-</div>
-
-
-<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-<script src="script.js"></script>
+  <!-- SheetJS for Excel export -->
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
