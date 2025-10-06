@@ -1,160 +1,65 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thiệp Mời Cưới - Hữu Tiến 💕 Nhật Linh</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fffaf7;
-      color: #444;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-    section {
-      padding: 80px 20px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-    .hero {
-      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1529634895659-3f24c2e3f3c9?auto=format&fit=crop&w=1400&q=80');
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero h1 {
-      font-size: 2.5em;
-      color: #b46c77;
-      margin-bottom: 0.3em;
-    }
-    .hero h2 {
-      font-size: 1.5em;
-      color: #5a5a5a;
-      margin-top: 0;
-    }
-    .divider {
-      width: 80px;
-      height: 3px;
-      background-color: #d5a6a6;
-      margin: 30px auto;
-      border-radius: 2px;
-    }
-    .info {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      max-width: 600px;
-      margin: auto;
-      padding: 30px;
-    }
-    .info h3 {
-      color: #b46c77;
-      margin-bottom: 15px;
-    }
-    .qr img {
-      width: 160px;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-    .footer {
-      background: #fdf3f2;
-      padding: 40px 20px;
-      font-size: 0.9em;
-      color: #777;
-    }
-    .btn-share {
-      display: inline-block;
-      background: #b46c77;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 25px;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-    .btn-share:hover {
-      background: #9c5b65;
-    }
-    /* Hiệu ứng hoa rơi */
-    .petal {
-      position: fixed;
-      top: -10px;
-      background: rgba(255,182,193,0.9);
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: fall linear infinite;
-      z-index: 0;
-    }
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) rotate(720deg);
-        opacity: 0.2;
-      }
-    }
-  </style>
-</head>
-<body>
-  <audio autoplay loop>
-    <source src="https://www.youtube.com/watch?v=F5iR0tG3PE0" type="audio/mp3" />
-  </audio>
+<!doctype html>
+</div>
+</section>
 
-  <section class="hero">
-    <h1>Hữu Tiến 💕 Nhật Linh</h1>
-    <h2>Lễ Thành Hôn</h2>
-    <div class="divider"></div>
-    <p><strong>Thứ Hai, 08/12/2025</strong><br/>
-      (Tức ngày 19 tháng 10 năm Ất)<br/>
-      9:00 sáng</p>
-  </section>
 
-  <section>
-    <div class="info">
-      <h3>Trân trọng kính mời</h3>
-      <p>Tới dự lễ thành hôn của chúng tôi được tổ chức tại:</p>
-      <p><strong>TẠI GIA ĐÌNH NHÀ TRAI</strong><br>
-        41 LK2, Khu đô thị Núi Long,<br>
-        Phường Hạc Thành, Thành phố Thanh Hóa</p>
-      <div class="qr">
-        <p>Quét mã QR để xem bản đồ:</p>
-        <img src="qr-map.png" alt="QR Bản đồ" />
-      </div>
-    </div>
-  </section>
+<!-- Wishes will be appended here at the end -->
+<section class="card module" id="module-wishes">
+<h3>Gửi lời chúc tới Cô dâu & Chú rể</h3>
+<form id="wish-form" class="wishes" onsubmit="return false;">
+<input type="text" id="wish-name" placeholder="Họ tên (không bắt buộc)" />
+<textarea id="wish-text" placeholder="Lời chúc..." required></textarea>
+<div style="display:flex;gap:8px;align-items:center">
+<button id="wish-send" class="btn">Gửi lời chúc</button>
+<button id="wish-clear" class="btn alt" type="button">Xóa mẫu</button>
+</div>
+</form>
 
-  <section class="footer">
-    <p>Trân trọng kính mời bạn đến chung vui cùng <strong>Cô dâu & Chú rể</strong>.</p>
-    <p>Xin cảm ơn và hẹn gặp lại trong ngày vui trọng đại! 💐</p>
-    <a href="#" class="btn-share">Chia sẻ thiệp này</a>
-  </section>
 
-  <script>
-    // Tạo hiệu ứng hoa rơi
-    function createPetal() {
-      const petal = document.createElement('div');
-      petal.classList.add('petal');
-      const size = Math.random() * 8 + 4;
-      petal.style.width = `${size}px`;
-      petal.style.height = `${size}px`;
-      petal.style.left = `${Math.random() * 100}vw`;
-      petal.style.animationDuration = `${Math.random() * 5 + 5}s`;
-      document.body.appendChild(petal);
+<div id="wishes-list" class="wishes-list"></div>
 
-      setTimeout(() => {
-        petal.remove();
-      }, 10000);
-    }
 
-    setInterval(createPetal, 200);
-  </script>
+<div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+<button id="export-wishes" class="btn secondary">Xuất lời chúc (Excel)</button>
+</div>
+</section>
+
+
+</main>
+
+
+<!-- Admin toolbar (hidden until admin login) -->
+<div id="toolbar" class="toolbar" style="display:none">
+<button id="btn-add" class="btn">✚ Thêm mục</button>
+<button id="btn-export" class="btn alt">⬇ Xuất HTML</button>
+<button id="btn-clear" class="btn secondary">Xóa nội dung</button>
+</div>
+
+
+<!-- Add Module Modal -->
+<div id="modal" class="modal" style="display:none">
+<div class="panel">
+<h3>Thêm mục mới</h3>
+<div class="form-row">
+<label>Loại mục</label>
+<select id="module-type">
+<option value="text">Đoạn văn</option>
+<option value="image">Ảnh</option>
+<option value="video">Video (YouTube link)</option>
+</select>
+</div>
+<div id="module-fields">
+<!-- dynamic fields here -->
+</div>
+<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+<button id="modal-add" class="btn">Thêm</button>
+<button id="modal-cancel" class="btn secondary">Hủy</button>
+</div>
+</div>
+</div>
+
+
+<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
