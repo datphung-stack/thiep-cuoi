@@ -1,45 +1,46 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lễ thành hôn của Hữu Tiến ❤️ Nhật Linh</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Hidden YouTube iframe for autoplay after user interaction -->
-  <div id="yt-player" style="display:none"></div>
+  <main>
+    <section class="card hero">
+      <h1 class="title">Lễ thành hôn của Hữu Tiến ❤️ Nhật Linh</h1>
+      <p class="subtitle">Trân trọng kính mời Quý khách đến chung vui cùng chúng tôi</p>
+    </section>
 
-  <!-- Music toggle (user clicks to allow autoplay) -->
-  <button id="music-toggle" class="music-toggle" aria-label="Bật/Tắt nhạc">Âm nhạc: Tắt</button>
+    <section class="card">
+      <h2>Thông tin lễ cưới</h2>
+      <p><strong>Ngày tổ chức:</strong> Thứ Hai, 08 tháng 12 năm 2025 (Tức 19 tháng 10 năm Ất Tỵ)</p>
+      <p><strong>Giờ khai tiệc:</strong> 9:00 sáng</p>
+      <p><strong>Địa điểm:</strong> 41 LK2 Khu đô thị Núi Long, P. Hạc Thành, Thanh Hóa</p>
+    </section>
 
-  <!-- Petals are appended by JS -->
-
-  <header class="hero">
-    <div class="hero-inner">
-      <h1 class="hero-title">Lễ thành hôn của <span class="fancy">Hữu Tiến</span> ❤️ <span class="fancy">Nhật Linh</span></h1>
-      <h2 class="hero-sub">Trân trọng kính mời Quý khách đến chung vui cùng chúng tôi</h2>
-      <div class="divider"></div>
-      <p class="hero-date"><strong>Thứ Hai, 08/12/2025</strong> — 09:00</p>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- Dynamic modules will render here -->
-    <div id="modules-area">
-      <!-- Preloaded info card (static) -->
-      <section class="card module" id="module-info">
-        <h3>Thông tin lễ cưới</h3>
-        <div class="info">
-          <p><strong>TẠI GIA ĐÌNH NHÀ TRAI</strong></p>
-          <p>41 LK2, Khu đô thị Núi Long,<br>Phường Hạc Thành, Thành phố Thanh Hóa</p>
-          <div class="qr"><p>Quét mã QR để xem bản đồ:</p><img src="qr-map.png" alt="QR Bản đồ"></div>
+    <section class="card qrgift">
+      <h2>Mừng cưới đến Cô dâu & Chú rể</h2>
+      <div class="qr-pair">
+        <div class="qr-item">
+          <img src="qr-bride.png" alt="QR cô dâu" />
+          <p>Cô dâu Nhật Linh 💕</p>
         </div>
-      </section>
-    </div>
+        <div class="qr-item">
+          <img src="qr-groom.png" alt="QR chú rể" />
+          <p>Chú rể Hữu Tiến 💖</p>
+        </div>
+      </div>
+    </section>
 
-    <!-- Wishes (fixed at the end) -->
+    <section class="card">
+      <h2>Đường dẫn bản đồ</h2>
+      <img src="qr-map.png" alt="QR bản đồ đến nhà trai" class="qrmap">
+      <p class="center">📍 <a href="https://maps.google.com/?q=41+LK2+Khu+đô+thị+Núi+Long,+P.Hạc+Thành,+Thanh+Hóa" target="_blank">Xem bản đồ tại đây</a></p>
+    </section>
+
     <section class="card module" id="module-wishes">
       <h3>Gửi lời chúc tới Cô dâu & Chú rể</h3>
       <form id="wish-form" class="wishes" onsubmit="return false;">
@@ -50,24 +51,19 @@
           <button id="wish-clear" class="btn alt" type="button">Xóa mẫu</button>
         </div>
       </form>
-
       <div id="wishes-list" class="wishes-list"></div>
-
       <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
         <button id="export-wishes" class="btn secondary">Xuất lời chúc (Excel)</button>
       </div>
     </section>
-
   </main>
 
-  <!-- Admin toolbar (hidden until admin login) -->
   <div id="toolbar" class="toolbar" style="display:none">
     <button id="btn-add" class="btn">✚ Thêm mục</button>
     <button id="btn-export" class="btn alt">⬇ Xuất HTML</button>
     <button id="btn-clear" class="btn secondary">Xóa nội dung</button>
   </div>
 
-  <!-- Add Module Modal -->
   <div id="modal" class="modal" style="display:none">
     <div class="panel">
       <h3>Thêm mục mới</h3>
@@ -79,9 +75,7 @@
           <option value="video">Video (YouTube link)</option>
         </select>
       </div>
-      <div id="module-fields">
-        <!-- dynamic fields here -->
-      </div>
+      <div id="module-fields"></div>
       <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
         <button id="modal-add" class="btn">Thêm</button>
         <button id="modal-cancel" class="btn secondary">Hủy</button>
@@ -89,7 +83,11 @@
     </div>
   </div>
 
-  <!-- SheetJS for Excel export -->
+  <div id="music-toggle" class="music-toggle">🎵 Âm nhạc</div>
+  <iframe id="ytplayer" type="text/html" width="0" height="0"
+    src="https://www.youtube.com/embed/F5iR0tG3PE0?autoplay=0&loop=1&playlist=F5iR0tG3PE0"
+    frameborder="0" allow="autoplay"></iframe>
+
   <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
   <script src="script.js"></script>
 </body>
